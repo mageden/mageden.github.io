@@ -10,7 +10,7 @@ html, body { height: 100%; }
 
 body {
   background-color: #000000; 
-  background-image: url("/_assets/img/back.jpg");
+  background-image: url("https://github.com/mgeden/mgeden.github.io/blob/master/_assets/img/back.jpg?raw=true");
   font-family: Helvetica, Arial, sans-serif;
   font-size: 16px;
   line-height: 1.5;
