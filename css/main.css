@@ -10,12 +10,11 @@ html, body { height: 100%; }
 
 body {
   background-color: #000000; 
-  background-image: url("https://github.com/mgeden/mgeden.github.io/blob/master/_assets/img/back.jpg?raw=true");
   font-family: Helvetica, Arial, sans-serif;
   font-size: 16px;
   line-height: 1.5;
   font-weight: 300;
-  /*background-color: #fdfdfd; */
+  background-color: #fdfdfd;
 }
 
 h1, h2, h3, h4, h5, h6 { font-size: 100%; font-weight: 400; }
@@ -139,7 +138,7 @@ a:visited { color: #205caa; }
 
 .page-content {
   padding: 30px 0;
-  background-color: #fff;
+  background-color: #000;
 }
 
 
