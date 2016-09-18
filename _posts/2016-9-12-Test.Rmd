@@ -5,3 +5,6 @@ categories: sensationalism
 ---
 
 Did this work?!
+```{r}
+2 + 1
+```
