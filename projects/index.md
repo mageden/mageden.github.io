@@ -15,7 +15,7 @@ This could be a great place to list your own projects. But to get you started, h
 
 
 <a href="https://www.google.com">
-<img align="center" border="0" alt="W3Schools" src="http://www.google.com.au/images/nav_logo7.png">
+<img align="center" border="0" alt="W3Schools" src="/projects/SAS/index.md">
 </a>
 <a href="https://www.google.com">
 <img align="center" border="0" alt="W3Schools" src="http://www.google.com.au/images/nav_logo7.png">
