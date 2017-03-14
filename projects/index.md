@@ -12,3 +12,5 @@ This could be a great place to list your own projects. But to get you started, h
 - [Jekyll documentation](http://jekyllrb.com/)
 - [Jekyll source on GitHub](https://github.com/jekyll/jekyll)
 - [Available plugins](http://jekyllrb.com/docs/plugins/#available_plugins)
+
+[<img src="http://www.google.com.au/images/nav_logo7.png">](http://google.com/)
