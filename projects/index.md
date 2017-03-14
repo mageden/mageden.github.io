@@ -15,5 +15,5 @@ This could be a great place to list your own projects. But to get you started, h
 
 [<img src="http://www.google.com.au/images/nav_logo7.png">](http://google.com/)
 <a href="www.google.com">
-<img align="right" src="http://www.google.com.au/images/nav_logo7.png" />
+<img align="right" src="http://www.google.com.au/images/nav_logo7.png">
 </a>
