@@ -13,7 +13,7 @@ This could be a great place to list your own projects. But to get you started, h
 - [Jekyll source on GitHub](https://github.com/jekyll/jekyll)
 - [Available plugins](http://jekyllrb.com/docs/plugins/#available_plugins)
 
-<a href="/SAS/index.md">
+<a href="/SAS">
 <img align="center" border="0" alt="W3Schools" src="http://www.google.com.au/images/nav_logo7.png">
 </a>
 <a href="https://www.google.com">
