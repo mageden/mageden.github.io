@@ -339,7 +339,27 @@ a:visited { color: #205caa; }
     font-size: 0;
     line-height: 0
 }
-
+.imgWrap {
+  position: relative;
+  height: 200px;
+  width: 257px;
+}
+.imgDescription {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(29, 106, 154, 0.72);
+  color: #fff;
+  visibility: hidden;
+  opacity: 0;
+  -webkit-transition: visibility opacity 0.2s;
+}
+.imgWrap:hover .imgDescription {
+  visibility: visible;
+  opacity: 1;
+}
 /* media queries */
 /* ----------------------------------------------------------*/
 
