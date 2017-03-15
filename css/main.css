@@ -340,8 +340,8 @@ a:visited { color: #205caa; }
 }
 .imgWrap {
   position: relative;
-  height: 200px;
-  width: 257px;
+  height: 150px;
+  width: 150px;
 }
 .imgDescription {
   position: absolute;
