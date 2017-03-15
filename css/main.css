@@ -17,7 +17,15 @@ body {
 }
 
 h1, h2, h3, h4, h5, h6 { font-size: 100%; font-weight: 400; }
-
+head123 { 
+    display: block;
+    font-size: 2em;
+    margin-top: 0.67em;
+    margin-bottom: 0.67em;
+    margin-left: 0;
+    margin-right: 0;
+    font-weight: bold;
+}
 a         { color: #2a7ae2; text-decoration: none; }
 a:hover   { color: #000; text-decoration: underline; }
 a:visited { color: #205caa; }
