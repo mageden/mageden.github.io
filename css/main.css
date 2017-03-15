@@ -318,12 +318,11 @@ a:visited { color: #205caa; }
 
 /* Custom Michael Things: Aligning images */
 #thumbs {   
-    width: 540px;
+    width: 33.75em;
     margin-top:45px;
     margin-left: auto; 
     margin-right: auto;
-
-     text-align: justify;
+    text-align: justify;
     -ms-text-justify: distribute-all-lines;
     text-justify: distribute-all-lines;
 }
