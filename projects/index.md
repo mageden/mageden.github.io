@@ -2,6 +2,7 @@
 layout: page
 title: Projects
 ---
+V2
 
 <div id="thumbs">
     <div class = "imgWrap">
