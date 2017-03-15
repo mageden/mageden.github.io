@@ -2,7 +2,6 @@
 layout: page
 title: Projects
 ---
-V2
 
 <div id="thumbs">
     <a id="single_image1" href="/projects/SAS"><img src="http://dummyimage.com/150x150/444/fff" alt=""/></a>
