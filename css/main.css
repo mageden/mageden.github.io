@@ -338,6 +338,11 @@ a:visited { color: #205caa; }
     font-size: 0;
     line-height: 0
 }
+.center-image
+{
+    margin: 0 auto;
+    display: block;
+}
 .hvr-border-fade {
   display: inline-block;
   vertical-align: middle;
