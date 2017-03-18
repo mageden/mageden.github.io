@@ -2,7 +2,7 @@
 layout: page
 title: Projects
 ---
-V5
+V6
 
 <div id="thumbs">
     <a id="single_image1" href="/projects/SAS"><img class = hvr-border-fade src="/projects/img/sas_logo.jpg" alt=""/></a>
