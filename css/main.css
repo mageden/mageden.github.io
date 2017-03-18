@@ -342,6 +342,8 @@ a:visited { color: #205caa; }
 {
     margin: 0 auto;
     display: block;
+    height: 20em;
+    width: 20em;
 }
 .hvr-border-fade {
   display: inline-block;
