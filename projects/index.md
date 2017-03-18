@@ -5,7 +5,7 @@ title: Projects
 V5
 
 <div id="thumbs">
-    <a class = hvr-border-fade id="single_image1" href="/projects/SAS"><img src="/projects/img/sas_logo.jpg" alt=""/></a>
+    <a id="single_image1" href="/projects/SAS"><img class = hvr-border-fade src="/projects/img/sas_logo.jpg" alt=""/></a>
     <a id="single_image2" href="/projects/pentair"><img src="/projects/img/pentair.jpg" alt=""/></a>
     <a id="single_image3" href="/projects/LAS"><img src="/projects/img/las_logo.png" alt=""/></a>
     <span class="stretch"></span>
