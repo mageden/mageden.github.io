@@ -338,7 +338,7 @@ a:visited { color: #205caa; }
     font-size: 0;
     line-height: 0
 }
-.active a:link {
+.active a {
     background-color: #4CAF50;
     color: white; 
 }
