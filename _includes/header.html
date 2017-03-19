@@ -17,7 +17,11 @@
         </svg>
       </a>
       <div class="trigger">
-        <a class="page-link" href="/">Home</a>
+        {% if page.active == "home" %}
+            <a class="active page-link" href="/">Home</a>
+        {% else %}
+             <a class="page-link" href="/">Home</a>
+        {% endif %}
         <a class="page-link" href="/about">About</a>
         <a class="page-link" href="/contact">Contact</a>
         <a class="page-link" href="/projects">Projects</a>
