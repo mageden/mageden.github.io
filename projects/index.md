@@ -1,17 +1,52 @@
 ---
 layout: page
-title: 
+title: Projects
 ---
-V9
 
-<div id="thumbs">
-    <a id="single_image1" href="/projects/SAS"><img src="/projects/img/sas_logo.jpg" alt=""/></a>
-    <a id="single_image2" href="/projects/pentair"><img src="/projects/img/pentair.jpg" alt=""/></a>
-    <a id="single_image3" href="/projects/LAS"><img src="/projects/img/las_logo.png" alt=""/></a>
-    <span class="stretch"></span>
-</div>
-<div id="thumbs">
-    <a id="single_image1" href="/projects/brace"><img src="/projects/img/ncstate_logo.jpg" alt=""/></a>
-    <span class="stretch"></span>
+<div id = "row">
+    <div id = "left">
+        <div class="ih-item circle colored effect6 scale_up"><a href="/projects/SAS">
+            <div><img src="/projects/img/sas_logo.jpg" alt="img"></div>
+            <div class="info sas">
+                <h3>SAS</h3>
+                <p>Improving learnability of technical documentation</p>
+            </div>
+        </a>
+        </div>
+    </div>
+
+    <div id = "right">
+        <div class="ih-item circle colored effect6 scale_up"><a href="/projects/pentair">
+            <div><img src="/projects/img/pentair.jpg" alt="img"></div>
+            <div class="info pentair">
+                <h3>Heading here</h3>
+                <p>Description goes here</p>
+            </div>
+        </a>
+        </div>
+    </div>
 </div>
 
+<div id = "row">
+    <div id = "left">
+        <div class="ih-item circle colored effect6 scale_up"><a href="/projects/LAS">
+            <div><img src="/projects/img/las_logo.png" alt="img"></div>
+            <div class="info las">
+                <h3>Heading here</h3>
+                <p>Description goes here</p>
+            </div>
+        </a>
+        </div>
+    </div>
+
+    <div id = "right">
+        <div class="ih-item circle colored effect6 scale_up"><a href="/projects/allscripts">
+            <div><img src="/projects/img/allscripts.png" alt="img"></div>
+            <div class="info allscripts">
+                <h3>Heading here</h3>
+                <p>Description goes here</p>
+            </div>
+        </a>
+        </div>
+    </div>
+</div>

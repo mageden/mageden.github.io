@@ -16,15 +16,12 @@
             c0-0.82,0.665-1.484,1.484-1.484h15.031C17.335,12.031,18,12.696,18,13.516L18,13.516z"/>
         </svg>
       </a>
-      <div class="trigger">
-        {% if page.active == "home" %}
-            <a class="active page-link" href="/">Home</a>
-        {% else %}
-             <a class="page-link" href="/">Home</a>
-        {% endif %}
-        <a class="page-link" href="/about">About</a>
-        <a class="page-link" href="/contact">Contact</a>
-        <a class="page-link" href="/projects">Projects</a>
+      <div class = "sliding-u-l-r">
+        {% assign current = page.url | downcase | split: '/' %}
+        <a class="page-link {% if current[1] == null %}current{% endif %}" href="/" >Home</a>
+        <a class="page-link {% if current[1] == 'about' %}current{% endif %}" href="/about">About</a>
+        <a class="page-link {% if current[1] == 'contact' %}current{% endif %}" href="/contact">Contact</a>
+        <a class="page-link {% if current[1] == 'projects' %}current{% endif %}" href="/projects">Projects</a>
       </div>
     </nav>
 
