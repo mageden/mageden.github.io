@@ -20,7 +20,7 @@
         {% assign current = page.url | downcase | split: '/' %}
         <a class="page-link {% if current[1] == null %}current{% endif %}" href="/" >Home</a>
         <a class="page-link {% if current[1] == 'about' %}current{% endif %}" href="/about">About</a>
-        <a class="page-link {% if current[1] == 'contact' %}current{% endif %}" href="/contact">Contact</a>
+        <!-- <a class="page-link {% if current[1] == 'contact' %}current{% endif %}" href="/contact">Contact</a> -->
         <a class="page-link {% if current[1] == 'projects' %}current{% endif %}" href="/projects">Projects</a>
       </div>
     </nav>
