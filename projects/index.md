@@ -39,7 +39,7 @@ title: Projects
         </div>
     </div>
 
-    <div id = "right">
+    <!-- <div id = "right">
         <div class="ih-item circle colored effect6 scale_up"><a href="/projects/allscripts">
             <div><img src="/projects/img/allscripts.png" alt="img"></div>
             <div class="info allscripts">
@@ -48,5 +48,5 @@ title: Projects
             </div>
         </a>
         </div>
-    </div>
+    </div> -->
 </div>

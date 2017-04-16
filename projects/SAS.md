@@ -19,22 +19,19 @@ The structure of the website appeared to be the limiting agent, however this cou
 
 ### Heuristic Evaluation
 
-Gerhardt-Powal's cognitive engineering principles
+A heuristic evaluation was then conducted on the SAS statistical documentation based on Gerhardt-Powal's cognitive engineering principles. A short summary of the main results of the heuristic evaluation are summarized in the table below.
 
 | Principle  | Primary Finding |
 | ------------- | ------------- |
-| Automate unwanted workload  | Here is where I will briefly describe my opinions on the matter  |
-| Reduce uncertainty  | Here is where I will briefly describe my opinions on the matter, but it may be long  |
-| Fuse data  | Content Cell  |
-| Present new information with meaning aids  | Content Cell  |
-| Use names that are conceptually related to function  | Content Cell  |
-| Group data in consistent, meaningful ways  | Content Cell  |
-| Limit data driven tasks  | Content Cell  |
-| Exclude extraneous information | Content Cell  |
-| Provide multiple coding of data  | Content Cell  |
-| Practice judicious redundancy | Content Cell  |
+| Automate unwanted workload  | Explanations for syntax should be on the syntax page |
+| Reduce uncertainty  | Not clear which syntax is required for procs |
+| Fuse data  | Provide links when advising information in a different location |
+| Present new information with meaning aids  | Describe new information when introduced, not after |
+| Practice judicious redundancy | Often needed information is provided elsewhere, instead of being repeated where needed |
 
 ### Literature Review
+
+The information from the naturalistic observation, readability assessment, and heuristic evaluation were used to conduct a literature review. This literature review was meant to display a number of advised changes, their theoretical backing, and how they would be implemented. This information was used to discuss the next direction with the SAS personnel. 
 
 | Document Element  | Description | Application | Source |
 | ------------- | ------------- | -------------- | ------- |
