@@ -10,3 +10,13 @@ title:
 I am motivated by the belief that data can be used to better understand people, and help them live more productive and happier lives. My passion is the combination of data science and human factors applied to real world problems. I've worked on projects from a wide range of fields, including driving safety, information architecture, usability of an orthopedic brace, personal health records, and dashboard design.
 
 I am always looking to collaborate and work on new projects, and am currently available for freelance work. Feel free to contact me if you would like to chat.
+
+### Materials
+
+<ul><a href = "/about/cv.pdf" download>Curriculum Vitae</a></ul>
+<ul><a href= "/about/resume.pdf" download>Résumé</a></ul>
+
+
+### Contact information
+
+<ul>Email: <a href="mailto:mageden@ncsu.edu">mageden@ncsu.edu</a></ul>
