@@ -4,7 +4,7 @@ title: Selected Projects
 ---
 <div class = "Row">
     <div class = "Column">
-        <div class="ih-item circle colored effect6 scale_up"><a href="/projects/SAS">
+        <div class="ih-item circle colored effect6 scale_up" margin-right="0"><a href="/projects/SAS">
             <div><img src="/projects/img/sas_logo.jpg" alt="img"></div>
             <div class="info sas">
                 <h3>SAS</h3>
