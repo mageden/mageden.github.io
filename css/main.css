@@ -335,9 +335,12 @@ a { color: #2a7ae2; text-decoration: none; }
     display: table;
     width: 100%;
     table-layout: fixed;
+    box-sizing: border-box;
 }
 .Column {
     display: table-cell;
+    table-layout: fixed;
+    box-sizing: border-box;
 }
 /* Attempting to find better way to do this */
 #left {
