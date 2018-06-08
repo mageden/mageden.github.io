@@ -317,27 +317,41 @@ a { color: #2a7ae2; text-decoration: none; }
 
 /* -------------- Align images: new -------------------- */
 
+.center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
 #row {
     width: 100%;
-    margin-top: 4em;
-    margin-bottom: 4em;
+    margin-top: 1em;
+    margin-bottom: 1em;
     margin-left: auto;
     margin-right: auto;
     display: inline-block;
 }
-
+.Row {
+    display: table;
+    width: 100%;
+    table-layout: fixed;
+}
+.Column {
+    display: table-cell;
+}
+/* Attempting to find better way to do this */
 #left {
     display: inline-block;
     float: left;
-    padding-left: 10%;
-    padding-right: 10%;
+    padding-left: 5%;
+    padding-right: 5%;
 }
 
 #right {
     display: inline-block;
     float: right;
-    padding-left: 10%;
-    padding-right: 10%;
+    padding-left: 5%;
+    padding-right: 5%;
 }
 
 /* -------------- Navigation effects -------------------- */
