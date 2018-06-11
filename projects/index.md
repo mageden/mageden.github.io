@@ -62,3 +62,12 @@ title: Selected Projects
 <header class="post-header">
   <h1> Other Projects </h1>
 </header>
+
+<div>
+  <ul class="other-projects">
+    <a href="/projects/BayesCWB.pdf" style="color: #000000; text-decoration: none;"><li>
+      <h3>Bayesian Analaysis of Counter-productive Work Behaviors</h3>
+      <p>Class project in collaboration with Amanda Young</p>
+    </li></a>
+  </ul>
+</div>
