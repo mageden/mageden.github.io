@@ -13,9 +13,8 @@ I am always looking to collaborate and work on new projects, and am currently av
 
 ### Materials
 
-<ul><a href = "/cv.pdf" download>Curriculum Vitae</a></ul>
 <ul><a href= "/resume.pdf" download>Résumé</a></ul>
-
+<ul><a href = "/cv.pdf" download>Curriculum Vitae</a></ul>
 
 ### Contact information
 

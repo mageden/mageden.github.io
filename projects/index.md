@@ -46,14 +46,6 @@ title: Selected Projects
         </div>
     </div>
     <div class = "Column">
-    <div class="ih-item circle colored effect6 scale_up"><a href="/projects/brace">
-        <div><img src="/projects/img/ncsu.jpg" alt="img"></div>
-        <div class="info las">
-            <h3>Product Innovation Lab</h3>
-            <p>Dog Factors: Design of canine orthopedic brace</p>
-        </div>
-        </a>
-        </div>
     </div>
     <div class = "Column">
     </div>
@@ -64,8 +56,9 @@ title: Selected Projects
 </header>
 
 <div>
-  <ul class="other-projects">
-    <a href="/projects/BayesCWB.pdf" style="color: #000000; text-decoration: none;"><li>
+  <ul class = 'project'>
+    <a href="/projects/BayesCWB.pdf" style="color: #000000; text-decoration: none;">
+    <li class = 'projectli projecthover'>
       <h3>Bayesian Analaysis of Counter-productive Work Behaviors</h3>
       <p>Class project in collaboration with Amanda Young</p>
     </li></a>

@@ -316,28 +316,23 @@ a { color: #2a7ae2; text-decoration: none; }
 .highlight .il { color: #009999 } /* Literal.Number.Integer.Long */
 
 /* ------------------------ Align Other Projects ------------------ */
-/* CHANGE: Indentation, link text formattin*/
-ul {
+ul.project {
   list-style-type: none;
   width: 100%;
 }
-
-li img {
+/* Not used currently, used for image to the left of other projects list */
+img.projectsimage {
   float: left;
   margin: 0 15px 0 0;
 }
 
-li {
+li.projectli {
   overflow: auto;
 }
 
-li:hover {
+li:hover.projecthover {
   background: #eee;
   cursor: pointer;
-}
-.other-projects {
-    margin.left=0px;
-    padding.left=0px;
 }
 
 /* -------------- Align images: new -------------------- */
