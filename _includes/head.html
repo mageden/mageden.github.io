@@ -9,4 +9,8 @@
         <!-- Custom CSS -->
         <link rel="stylesheet" href="/css/main.css">
         <link rel="stylesheet" href="/css/pretty_effects.css">
+        <!--- Google Analytics --->
+        {% if site.google_analytics and jekyll.environment == 'production' %}
+        {% include analytics.html %}
+        {% endif %}
     </head>
