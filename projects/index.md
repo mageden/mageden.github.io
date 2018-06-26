@@ -4,7 +4,7 @@ title: Selected Projects
 ---
 <div class = "Row">
     <div class = "Column">
-        <div class="ih-item circle colored effect6 scale_up" margin-right="0"><a href="/projects/SAS">
+        <div class="ih-item circle colored effect6 scale_up" margin-right="0" width = "5%"><a href="/projects/SAS">
             <div><img src="/projects/img/sas_logo.jpg" alt="img"></div>
             <div class="info sas">
                 <h3>SAS</h3>
@@ -29,12 +29,10 @@ title: Selected Projects
         <div class="info las">
             <h3>LAS</h3>
             <p>Modeling anticipatory thinking in expert analysts</p>
-        </div>
+            </div>
         </a>
         </div>
     </div>
-</div>
-<div class = "Row">
     <div class = "Column">
     <div class="ih-item circle colored effect6 scale_up"><a href="/projects/allscripts">
         <div><img src="/projects/img/allscripts.png" alt="img"></div>
@@ -45,11 +43,8 @@ title: Selected Projects
         </a>
         </div>
     </div>
-    <div class = "Column">
-    </div>
-    <div class = "Column">
-    </div>
 </div>
+
 
 <header class="post-header">
   <h1> Other Projects </h1>

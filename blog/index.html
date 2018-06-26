@@ -6,7 +6,15 @@ active: home
 <div class="home">
   <ul class="posts">
     {% for post in site.posts %}
-      <li><span class="post-date">{{ post.date | date: "%b %-d, %Y" }}</span> <a class="post-link" href="{{ post.url }}">{{ post.title }}</a></li>
+      <li><span class="post-date">{{ post.date | date: "%b %-d, %Y" }} :
+          [
+              {% for tag in post.tags %}
+              {% capture tag_name %}{{ tag }}{% endcapture %}
+              <a href="/tag/{{ tag_name }}"><code class="highligher-rouge"><nobr>{{ tag_name }}</nobr></code>&nbsp;</a>
+              {% endfor %}
+           ]
+      </span> <a class="post-link" href="{{ post.url }}">{{ post.title }}</a></li>
+
     {% endfor %}
   </ul>
 </div>
