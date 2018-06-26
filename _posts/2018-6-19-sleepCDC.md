@@ -1,8 +1,7 @@
 ---
 layout: post
 title: "Visualizing Sleep Deprivation in the US using 2009 CDC Census Data"
-category:
-permalink: 2018/06/19/sleepCDC.html
+tags: Visualization Spatial
 ---
 
 ## Overview
