@@ -1,7 +1,7 @@
 name: Michael Geden
 markdown: kramdown
 highlighter: rouge
-description: "Write an awesome description for your new site here. It will appear in your document head meta (for Google search results) and in your feed.xml site description."
-url: "https://mgeden.github.io/"
+description: "Professional website and blog where I discuss statistics, visualization, computer science fundamentals, and occasionally bread."
+url: "https://michaelgeden.com/"
 # Google Analytics
 google_analytics: UA-121201985-1
