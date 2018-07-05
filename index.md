@@ -7,16 +7,19 @@ title:
     <img src="/portrait.jpg" align="middle" alt="Portrait" style="width:15em; height:15em; margin-bottom:1em; display:block; margin:0 auto;">
 </div>
 
-I am motivated by the belief that data can be used to better understand people, and help them live more productive and happier lives. My passion is the combination of data science and human factors applied to real world problems. I've worked on projects from a wide range of fields, including driving safety, information architecture, usability of an orthopedic brace, personal health records, and dashboard design.
+My name is Michael Geden. I am a data/cognitive scientist, and will be graduating from NC State in December 2018 with a PhD in human factors (a type of applied psychology focused on human/system interactions) and a Masters in statistics. This website is a place for me to display my work and blog about statistical and computer science (with some bread and cat pictures sneaked in).
 
-I am always looking to collaborate and work on new projects, and am currently available for freelance work. Feel free to contact me if you would like to chat.
+On a more personal note, in my free time I love to rock climb/mountain biking, bake bread, and break my wallet trying new cheeses and beers. My cats name is Fisher, and all spelling mistakes will be placed on his shoulders.
+
+If you would like to discuss anything relating to statistics, computer science, bread, potential collaborations or jobs, please contact me via the email below.
 
 ### Materials
 
-<ul><a href= "/resume.pdf" download>Résumé</a></ul>
-<ul><a href = "/cv.pdf" download>Curriculum Vitae</a></ul>
+<ul><img src="file.svg"> <a href= "/resume.pdf">Résumé</a></ul>
+<ul><img src="file.svg"> <a href = "/cv.pdf">Curriculum Vitae</a></ul>
 
 ### Contact information
 
-<ul>Email: <a href="mailto:mageden@ncsu.edu">mageden@ncsu.edu</a></ul>
-<ul>LinkedIn: <a href="https://www.linkedin.com/in/michael-geden/">LinkedIn</a></ul>
+<ul><img src="mail.svg"> <a href="mailto:mageden@ncsu.edu">mageden@ncsu.edu</a></ul>
+<ul><img src="linkedin.svg"> <a href="https://www.linkedin.com/in/michael-geden/">michael-geden</a></ul>
+<ul><img src="github.svg"> <a href="https://github.com/mageden">mageden</a></ul>

@@ -19,7 +19,7 @@ body {
 h1, h2, h3, h4, h5, h6 { font-size: 100%; font-weight: 400; }
 
 a { color: #2a7ae2; text-decoration: none; }
-/* a:hover   { color: #000; text-decoration: underline; } */
+a:hover   { color: #000; text-decoration: underline; }
 
 
 /* Utility */
@@ -362,7 +362,7 @@ li:hover.projecthover {
     table-layout: fixed;
     box-sizing: border-box;
 }
-/* Attempting to find better way to do this */
+/* Attempting to find better way to do this
 #left {
     display: inline-block;
     float: left;
@@ -375,7 +375,7 @@ li:hover.projecthover {
     float: right;
     padding-left: 5%;
     padding-right: 5%;
-}
+}*/
 
 /* -------------- Navigation effects -------------------- */
 
