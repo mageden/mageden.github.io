@@ -4,6 +4,9 @@ title: "Unit Testing in R"
 tags: Programming
 ---
 
+* TOC
+{:toc}
+
 I have recently started using unit testing after reading a great [post](http://r-pkgs.had.co.nz/tests.html) by Hadley Wickham about their importance and implementation using the `testthat` package. Unit testing is the process of testing small 'units' of code (or functions) and determining if they are behavior appropriately. Prior to unit testing, my code would usually have groups of statements manually going through conditions looking for mistakes, such as;
 
 ```r

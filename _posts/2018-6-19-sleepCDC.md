@@ -4,6 +4,9 @@ title: "Visualizing Sleep Deprivation in the US"
 tags: Visualization Spatial
 ---
 
+* TOC
+{:toc}
+
 ## Overview
 
 Approximately 1/3 of the population of the United States reports having less sleep on average than the recommended 7 hours a night (CDC, 2011; Liu, 2016). Chronic sleep deprivation is considered a serious public health issue, as insufficient sleep is associated with increased workplace related accidents (Dinges, 1995; Rosekind et al., 2010), obesity (Gangwisch, Malaspina, Boden-Albala, & Heymsfield, 2004; Knutson, Spiegel, Penev, & Van Cauter, 2004), drowsy driving (J. Horne & Louise, 1995; Howard et al., 2004), cardiovascular disease (Ayas et al., 2003; Mullington, Hacch, Toth, Serrador, & Meier-Ewert, 2009), and a variety of other risks/conditions. Sleep deprivation is also correlated with decreased decision making (Harrison & Horne, 2000) and sustained attention (Lim & Dinges, 2000), which may provide one explanation for some of the associated behavioral detriments.

@@ -4,6 +4,9 @@ title: "Bayesian State Space Model of Simulated Satellite Data"
 tags: TimeSeries Bayesian
 ---
 
+* TOC
+{:toc}
+
 ## Overview
 
 An interesting problem that comes up commonly in ecology and soil sciences is how to estimate an unobserved latent process over time through data coming in through multiple sources. This problem is made more challenging with commonly high proportions of missing data. The standard Box-Jenkins approach is not able to estimate the unobserved process/state, requiring the use of an alternative method; state space models. State space models, or dynamic linear models, are a flexible group of models in which we define a measurement model of the state of the system and a transition model for how that state changes over time. An upcoming post will dive into how these work and some of the things that are able to do. Bayesian implementations of these allow for us to investigate the posteriors for the state space parameters and unobserved variables, as well as easily handle missing data.
