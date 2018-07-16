@@ -174,13 +174,7 @@ Two of the most common cases in which we would expect errors to not be independe
 
 $$ SE[\hat{\beta}] = (X^TX)^{-1}X^TE[\epsilon\epsilon^T]X(X^TX)^{-1} \ne  (X^TX)^{-1}X^T\sigma^2_{\epsilon} IX(X^TX)^{-1} $$
 
-Models that explicitly model autocorrelation, such as box-jenkins models for time series data, also provide more accurate predictions by incorporating this information compared to ignoring the autocorrelation using a standard linear regression.  
-
-$$
-\begin{align*}
-
-\end{align*}
-$$
+Models that explicitly model autocorrelation, such as box-jenkins models for time series data, also provide more accurate predictions by incorporating this information into the model.
 
 ### Outliers
 
