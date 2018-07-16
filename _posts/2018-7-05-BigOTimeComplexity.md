@@ -64,7 +64,7 @@ Three examples of quadratic order algorithms are the linear algorithms listed ea
 
 ### $O(c^n)$ : Exponential
 
-Recursive algorithms for calculating a Fibonacci sequence follow exponential time (as at each step two numbers must be added). Another example is searching a vector for two numbers which add up exactly to a value P. 
+Recursive algorithms for calculating a Fibonacci sequence follow exponential time (as at each step two numbers must be added). Another example is searching a vector for two numbers which add up exactly to a value P.
 
 ### $O(n!)$ : Factorial
 
