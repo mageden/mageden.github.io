@@ -62,7 +62,7 @@ The time complexity of ordinary least squares is $O(n^3)$ due to the $(X^TX)^{-1
 If the conditions for ordinary least squares are met and we additionally assume that the residuals are normally distributed or that the sample size is large enough for them to be asymptotically normal, we get the same solution for estimating the optimal coefficients, but with the addition of distributional information about the model parameters.
 
 $$ \begin{align*}
-& y_i | x,\beta \sim N(\mu,\sigma_\epsilon^2) \\
+& y_i | x,\beta \stackrel{iid}{\sim} N(\mu,\sigma_\epsilon^2) \\
 & \mu_i = \beta_0 + \cdots + \beta_k x_{i,k}  \in [-\infty,\infty]\\
 & P(y_i) = \frac{1}{\sqrt{2\pi \sigma_\epsilon^2}}e^{-\frac{(y_i - \mu_i)^2}{2\sigma_\epsilon^2}} \\
 \end{align*}
@@ -141,7 +141,7 @@ This expression is a mouthful, however, it can be broken down into the following
 
 $$
 \begin{align*}
-& \epsilon_i \sim iid(0,\sigma^2_\epsilon) \\
+& \epsilon_i \stackrel{iid}{\sim} N(0,\sigma^2_\epsilon) \\
 & \implies E[\epsilon_i] = 0 \\
 & \implies Var(\epsilon_i)=\sigma^2 : \forall i \\
 & \implies \epsilon_i \bot \epsilon_j : i \ne j \\
@@ -163,8 +163,25 @@ Non-constant variance, or heteroskedasticity, is important as it results in obse
 
 <img src="/images/LinearRegression/heteroskedasticity_example.png" width="100%" style="padding:0px"/>
 
-<img src="/images/LinearRegression/heteroskedasticity_cost.png" width="100%" style="padding:0px"/>
+As an example of how heteroskedasticity can influence a model I have simulated increasing amounts of inconsistent variability and its influence on a number of metrics; estimated coefficient (true value = 1), bias (difference of estiamted cofficient from true value), coverage (proportion of models where the 95% confidence interval included the true value), power (proportion of models where the estimated coefficient was significantly different than 0), and MSE (mean squared error).
 
+The following model was used for the simulations as an example of how heteroskedasticity can impact models;
+
+$$
+\begin{align*}
+& Y_i = 1 + X + 4X_i^2 + \epsilon_i + (H \times I_{X_i>0}\times \epsilon_i) \\
+& H : \text{Heteroskedasticity/Error multiplier} \\
+& X_i \stackrel{iid}{\sim} N(0,1) \\
+& I_{X>0}(x) :=
+\begin{cases}
+1, & \text{if } x>0 \\
+0, & \text{otherwise} \\
+\end{cases}\\
+& \epsilon_i \stackrel{iid}{\sim} N(0,1) \\
+\end{align*}
+$$
+
+<img src="/images/LinearRegression/heteroskedasticity_cost.png" width="100%" style="padding:0px"/>
 
 There are two primary consequences of heteroskedasticity in relation to model fit; the ordinary least squares estimator is no longer efficient (the standard error may no longer approach zero as sample size increases) and the standard errors may be biased.
 
@@ -190,7 +207,7 @@ Standard linear regression assumes that the residuals of the linear model follow
 
 ### Weak exogeneity
 
-One of the less obvious assumptions in linear regression is that the covariates are measured without error, or weak exogeneity (the name comes from another term for covariates; exogenous variables). Violating this assumption can bias estimated coefficients and standard error.
+One of the less obvious assumptions in stadnard linear regression is that the covariates are measured without error, or weak exogeneity (the name comes from another term for covariates; exogenous variables). Violating this assumption biases the estimated standard error and coefficients.
 
 $$
 \begin{align*}
@@ -206,7 +223,26 @@ E[\hat{\beta}] & = E[(Z^TZ)^{-1}(Z^{T}Z\beta)] \\
 \end{align*}
 $$  
 
-This is the most commonly violated assumption and is rarely met in most situations where the covariates can't be perfectly controlled or measured.
+More specifically, the coefficients are consistently underestimating the true relationship between the error-less covariate and the dependent variable; this is known as attenuation or regression dilation. The relationship between the covariate-with-error and dependent variable remains unbiased, and slowly shifts toward 0 as the amount of error in the covariate increases drowning out the true relationship.
+
+$$
+\begin{align*}
+\beta \to \frac{\text{Cov}(Z,Y)}{\text{Var}(Z)} = \frac{\beta \sigma^2_X}{\sigma^2_X + \sigma^2_Z} = \frac{\beta}{1+\frac{\sigma^2_Z}{\sigma^2_X}}\\
+\end{align*}
+$$
+
+This is the most commonly violated assumption and is rarely met in most situations where the covariates can't be perfectly controlled or measured. A simple model was simulated with increasing amounts of covariate error in order to provide an example of how violating this assumption can impact a model. The model used to simulate the data was;
+
+$$
+\begin{align*}
+& Y_i = 1 + X_i + \epsilon_{i,Y} : \text{True model} \\
+& \hat{Y_i} = \beta_0 + \beta_1Z_i : \text{Estimated model} \\
+& Z_i = X_i + \epsilon_{i,Z} : \text{Noisy measurement}\\
+& X_i \stackrel{iid}{\sim} N(0,1) \\
+& \epsilon_{i,Y} \stackrel{iid}{\sim} N(0,1) \\
+& \epsilon_{i,Z} \stackrel{iid}{\sim} N(0,\sigma^2_Z) : \text{Covariate measurement error} \\
+\end{align*}
+$$
 
 <img src="/images/LinearRegression/exogeniety.png" width="100%" style="padding:0px"/>
 
