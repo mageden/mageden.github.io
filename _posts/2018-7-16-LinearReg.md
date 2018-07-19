@@ -95,7 +95,7 @@ Categorical variables with J groups are estimated through creating $J-1$ dummy c
 
 ### $R^2$
 
-A convenient metric for assessing the overall quality of fit of the model to the data is the coefficient of determination, or $R^2$, which is the proportion of the variance in $Y$ explained by $X$. This can be calculated through decomposition the data variability into three components; the total sum of squares $SS_{tot}$, regression sum of squares $SS_{reg}$, and the residual sum of squares $SS_{res}$.
+A convenient metric for assessing the overall quality of fit of the model to the data is $R^2$, which is the proportion of the variance in $Y$ explained by $X$. This can be calculated through decomposition the data variability into three components; the total sum of squares $SS_{tot}$, regression sum of squares $SS_{reg}$, and the residual sum of squares $SS_{res}$.
 
 $$
 \begin{align*}
