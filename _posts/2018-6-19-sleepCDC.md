@@ -33,15 +33,15 @@ provides an easier interpretation, and helps circumspect the issue of nonlineari
 
 The high granulaity of a county level perspective involves segmenting the data across approximately 2200 groupings; this results in many low sample size and completely missing counties. We see that this is particularly an issue in the central regions of the US. This is important to consider when interpreting the sleep deprivation estimates, as lower sample size regions will be more volatile with a larger standard error compared to larger sample size regions.
 
-<img src="/images/sleepCDC/county_miss_plot.png" width="100%" style="padding:0px"/>
+<img src="/images/posts/sleepCDC/county_miss_plot.png" width="100%" style="padding:0px"/>
 
 The proportion of sleep deprivation appears to have some regional variations, with a larger rate in the Appalachian region, as would be expected. In general there appears to be small differences across the different counties excluding a few extreme observations, most of which likely were a result of low sample size.
 
-<img src="/images/sleepCDC/county_cont_plot.png" width="100%" style="padding:0px"/>
+<img src="/images/posts/sleepCDC/county_cont_plot.png" width="100%" style="padding:0px"/>
 
 When visualizing continuous data across a large amount of space, such as a county level analysis of the United States, it can often become challenging to see differences between regions due to the density of the space and range of the data. Under these circumstances, quintiles are often used to break the data into separate equally sized ordered bins in order to make patterns more visible. The cost of using quintiles is that it comes at a loss of information and interpretability. As with dichotomization, the ranges and distribution of data within the bins disappears, and the bins can make differences look larger than they are if the viewer isn’t attentive to the range for each bin.
 
-<img src="/images/sleepCDC/county_quint_plot.png" width="100%" style="padding:0px"/>
+<img src="/images/posts/sleepCDC/county_quint_plot.png" width="100%" style="padding:0px"/>
 
 ## 2016 BRFSS: State Level
 
@@ -56,13 +56,13 @@ This question is aiming to ask the same question as the previous one, however, a
 
 There is a spike in the sample size for florida and maine, but all states have a large sample size. The proportion of individuals asked to participate that responded appears to be approximately the same across regions as well, with a maximum difference of ~2%
 
-<img src="/images/sleepCDC/state_freq_plot.png" width="49%" style="padding:0px"/>
-<img src="/images/sleepCDC/state_resp_plot.png" width="49%" style="padding:0px"/>
+<img src="/images/posts/sleepCDC/state_freq_plot.png" width="49%" style="padding:0px"/>
+<img src="/images/posts/sleepCDC/state_resp_plot.png" width="49%" style="padding:0px"/>
 
 The Appalachian region appears to have increased sleep deprivation compared to the rest of the US, with another hotspot in California/Nevada. The central US appears well rested comparatively, though the rates of sleep deprivation are startlingly high across the country.
 
-<img src="/images/sleepCDC/state_cont_plot.png" width="49%" style="padding:0px"/>
-<img src="/images/sleepCDC/state_dichot_plot.png" width="49%" style="padding:0px"/>
+<img src="/images/posts/sleepCDC/state_cont_plot.png" width="49%" style="padding:0px"/>
+<img src="/images/posts/sleepCDC/state_dichot_plot.png" width="49%" style="padding:0px"/>
 
 ## Discussion
 

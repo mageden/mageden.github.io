@@ -17,7 +17,7 @@ This post gives a brief example on the use of bayesian state space models in R u
 
 The data for this study were simulated and provided by a professor in my bayesian course. The data were simulating satellite measurements of the Normalized Difference Vegetation Index (NDVI), a measure of "greenness" of a region, across 365 days. The true value of NDVI was generated across 6 pixels using the following structure;  
 
-<div style="text-align:center;"><img src="/images/ApplBayesSS/NDVIformula.png" style="padding:2px" align="middle"/></div>
+<div style="text-align:center;"><img src="/images/posts/ApplBayesSS/NDVIformula.png" style="padding:2px" align="middle"/></div>
 
 The fake data came from 3 satellites. The mechanisms for the missing data were not given (MCAR, MAR, NMAR), and the proportion varied across satellite.
 
@@ -27,21 +27,21 @@ The fake data came from 3 satellites. The mechanisms for the missing data were n
 
 Below is a plot of the data over time across pixel and satellite. No clear patterns were present for the missing data across any of the satellites, so the mechanism was assumed to be MCAR.
 
-<img src="/images/ApplBayesSS/rawplot.png" width="100%" style="padding:2px"/>
+<img src="/images/posts/ApplBayesSS/rawplot.png" width="100%" style="padding:2px"/>
 
 Proportion of missing data by satellite and pixel. Closely but not perfectly matches the proportions provided, suggesting that the missing data process was at least random.
 
-<img src="/images/ApplBayesSS/missplot.png" width="100%" style="padding:2px"/>
+<img src="/images/posts/ApplBayesSS/missplot.png" width="100%" style="padding:2px"/>
 
 Scatterplot matrix of the various measurements. Distributions appear approximately normal with high correlation across pixels/satellites.
 
-<img src="/images/ApplBayesSS/corplot.png" width="100%" style="padding:2px"/>
+<img src="/images/posts/ApplBayesSS/corplot.png" width="100%" style="padding:2px"/>
 
 ## Statistical Model
 
 The &theta; errors were independent across time, and the satellites errors were considered to be independent and to follow a Gaussian distribution. Using this information we can recognize this as a Linear Gaussian State Space model, or a Dynamic Linear Model. JAGS was used to estimate the model, as it is able to handle missing data in the dependent variable. JAGS can only handle missing data in univariate variables however, so Y1 was cast as 6 variables, one for each pixel, though the full covariance matrix was still fitted and estimated to account for their relationship.
 
-<div style="text-align:center;"><img src="/images/ApplBayesSS/equations.png" width = "50%" style="padding:2px" align="middle"/></div>
+<div style="text-align:center;"><img src="/images/posts/ApplBayesSS/equations.png" width = "50%" style="padding:2px" align="middle"/></div>
 
 Two models were initially compared to see if correlation needed to be different across each of the &theta;, or if we could use one &rho; for all pixels. The single &rho; model fit essentially the same for mean deviance (mean deviance = 1072, penalty = 1020, penalized deviance 2092) as the 6 &rho; model (mean deviance = 1037, penalty = 12915, penalized deviance = 13952), and the six &rho; had essentially an identical posterior distribution, so the simpler model was selected. Then a model with an additive bias (intercept) was compared to a model with multiplicative and additive bias (intercept + slope); the intercept + slope model (mean deviance = -617, penalty = 1105, penalized deviance = 487.7) fit far better then the just intercept model (mean deviance = 1072, penalty = 1020, penalized deviance = 2092), and was selected for the final model to be used.
 
@@ -99,11 +99,11 @@ InvOmegaY1[1,2] <- rho12 * sigmaY1[1] * sigmaY1[2]
 
 The maximum value of the gelman statistic, measuring convergence across chains, was 1.048 across all Theta for each time point and pixel. The sample sizes in general looked acceptable, however a few can be seen to be below 1000. The minimum was around 800, and given the nature of the assignment and the computational strain of thinning, which crashed my computer twice, this was considered sufficient for the purpose of the midterm. Trace plots were also visually inspected and had all converged across all three chains after the burn-in had been removed (5000 samples across each chain).  
 
-<img src="/images/ApplBayesSS/sampplot.png" width="100%" style="padding:2px"/>
+<img src="/images/posts/ApplBayesSS/sampplot.png" width="100%" style="padding:2px"/>
 
 
 ## Final Results
 
 The black line below represents the estimated values, the red squares are observed for satellite 1, the blue circles are observed for satellite 2 (biased), and the brown plus' are observed for satellite 3. The fit appears to be very good across all values except blue, which we would expect as it was biased (displaying a intercept and slope difference from the predicted).
 
-<img src="/images/ApplBayesSS/posterior.png" width="100%" style="padding:2px"/>
+<img src="/images/posts/ApplBayesSS/posterior.png" width="100%" style="padding:2px"/>

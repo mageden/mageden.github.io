@@ -23,7 +23,7 @@ $$
 
 The random noise associated with $y$ is delegated to $\epsilon_i$; the better the fit, the smaller the $\epsilon_i$.
 
-<img src="/images/LinearRegression/lm_example.png" width="100%" style="padding:0px"/>
+<img src="/images/posts/LinearRegression/lm_example.png" width="100%" style="padding:0px"/>
 
 ## Estimating Coefficients
 
@@ -39,9 +39,9 @@ SSE & = \sum_{i=1}^N (y_i -\hat{y})^2 = \sum_{i=1}^2 \epsilon_i^2 = \epsilon^T\e
 & = (Y-X\hat{B})^T(Y-X\hat{B})=Y^TY -2Y^TX\hat{B} +\hat{B}^TX^TX\hat{B} \\
 0 & = \frac{\partial}{\partial \hat{B}}(Y^TY -2Y^TX\hat{B} +B^TX^TX\hat{B}) \\
 & = -2X^TY+2X^TX\hat{B} \\
-& \implies -2X^TX\hat{B} = -2X^TY \\
-& \implies X^TX\hat{B} = X^TY \\
-& \implies \hat{B}=(X^TX)^{-1}X^TY
+& \Longleftrightarrow -2X^TX\hat{B} = -2X^TY \\
+& \Longleftrightarrow X^TX\hat{B} = X^TY \\
+& \Longleftrightarrow \hat{B}=(X^TX)^{-1}X^TY
 \end{align*}
 $$
 
@@ -50,7 +50,10 @@ We can easily show that $\hat{B}$ is an unbiased estimator of $B$ assuming that 
 $$
 \begin{align*}
 \hat{B} & = E[(X^TX)^{-1}(X^TY)] \\
-& = E[(X^TX)^{-1}X^T(XB+\epsilon)] = B+E[(X^TX)^{-1}X^T\epsilon] \\
+& = E[(X^TX)^{-1}X^T(XB+\epsilon)]  \\
+& = B+E[(X^TX)^{-1}X^T\epsilon] \\
+& = B+E\big[E[(X^TX)^{-1}X^T\epsilon|X]\big] : \text{Apply iterated expectation}\\
+& = B+E\big[(X^TX)^{-1}X^TE[\epsilon|X]\big] \\
 & = B \\
 \end{align*}
 $$
@@ -107,7 +110,7 @@ $$
 
 The choice of these deviations makes more sense when visualized. Below are the deviations of each time, which are then squared and summed to form our model variability components.
 
-<img src="/images/LinearRegression/ss_examples.png" width="100%" style="padding:0px"/>
+<img src="/images/posts/LinearRegression/ss_examples.png" width="100%" style="padding:0px"/>
 
 With this in mind, calculating and interpreting $R^2$ is very straightforward. It is bound the proportion of the overall variance of the data that is explained using the model bounded between 0 (model explains none of the data) and 1 (model perfectly explains the data).
 
@@ -152,8 +155,8 @@ $$
 
 The residuals are assumed to be centered around the true value across all data points. In other words, that our estimates are unbiased. Model misspecification is one of the primary causes of violating this assumption, such as omitting a key variable in the model or a meaningful interaction. Violating this assumption can have a negative influence on the accuracy of the estimates, the standard errors, and prediction.
 
-<img src="/images/LinearRegression/bias_unbiased.png" width="100%" style="padding:0px"/>
-<img src="/images/LinearRegression/bias_bias.png" width="100%" style="padding:0px"/>
+<img src="/images/posts/LinearRegression/bias_unbiased.png" width="100%" style="padding:0px"/>
+<img src="/images/posts/LinearRegression/bias_bias.png" width="100%" style="padding:0px"/>
 
 This assumption is the same as stating that Y must be a linear function of the parameters, but not necessarily linear in and of itself. If it is linear in its parameters, then $E[\epsilon_i] = 0$. The $E[\epsilon]=0$, as the overall mean of residuals remains 0, however, the expectation across the different residuals varies and is not always equal to 0 in the biased case.
 
@@ -161,7 +164,7 @@ This assumption is the same as stating that Y must be a linear function of the p
 
 Non-constant variance, or heteroskedasticity, is important as it results in observations with higher variance being weighed more than observations with lower variance. There are many forms of heteroskedasticity, such as the one below;
 
-<img src="/images/LinearRegression/heteroskedasticity_example.png" width="100%" style="padding:0px"/>
+<img src="/images/posts/LinearRegression/heteroskedasticity_example.png" width="100%" style="padding:0px"/>
 
 As an example of how heteroskedasticity can influence a model I have simulated increasing amounts of inconsistent variability and its influence on a number of metrics; estimated coefficient (true value = 1), bias (difference of estiamted cofficient from true value), coverage (proportion of models where the 95% confidence interval included the true value), power (proportion of models where the estimated coefficient was significantly different than 0), and MSE (mean squared error).
 
@@ -181,7 +184,7 @@ $$
 \end{align*}
 $$
 
-<img src="/images/LinearRegression/heteroskedasticity_cost.png" width="100%" style="padding:0px"/>
+<img src="/images/posts/LinearRegression/heteroskedasticity_cost.png" width="100%" style="padding:0px"/>
 
 There are two primary consequences of heteroskedasticity in relation to model fit; the ordinary least squares estimator is no longer efficient (the standard error may no longer approach zero as sample size increases) and the standard errors may be biased.
 
@@ -197,13 +200,13 @@ Models that explicitly model autocorrelation, such as box-jenkins models for tim
 
 Extreme values can be considered either as reasonable but low probability values from the same distribution as the rest of the observations, or as extreme values drawn from a separate distribution. Unfortunately there is no explicit way to know whether or not an outlier is an extreme but reasonable value or a non-representative value; for this reason it is not advised to simply remove all extreme observations. Unfortunately, they can have a large influence on the ordinary least squares estimates. The least squares method increases the importance of extreme values by squaring the errors, allowing them to have excessive leverage on the estimates.
 
-<img src="/images/LinearRegression/outlier_example.png" width="100%" style="padding:0px"/>
+<img src="/images/posts/LinearRegression/outlier_example.png" width="100%" style="padding:0px"/>
 
 ### Normally distributed errors
 
 Standard linear regression assumes that the residuals of the linear model follow a normal distribution. This can be easily checked through a QQ plot, comparing the model residuals to expected residuals from a normal distribution. As long as there is a moderate sample size linear regression is quite robust to violations of this assumption. OLS does not require this assumption to be the best linear unbiased estimator (BLUE), but it is required for hypothesis testing in small sample sizes. The estimated coefficients will remain unbiased and the prediction accuracy will be about the same, but the confidence and prediction intervals may become less accurate. Below we see an example of a QQ plot with normal residuals and gamma distributed residuals, both with the same variance. The gamma residuals depart heavily from the normal residuals in the higher quantiles here.
 
-<img src="/images/LinearRegression/normerror_qq.png" width="100%" style="padding:0px"/>
+<img src="/images/posts/LinearRegression/normerror_qq.png" width="100%" style="padding:0px"/>
 
 ### Weak exogeneity
 
@@ -244,7 +247,7 @@ $$
 \end{align*}
 $$
 
-<img src="/images/LinearRegression/exogeniety.png" width="100%" style="padding:0px"/>
+<img src="/images/posts/LinearRegression/exogeniety.png" width="100%" style="padding:0px"/>
 
 ### Low multicollinearity
 

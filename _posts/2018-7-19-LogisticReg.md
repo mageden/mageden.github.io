@@ -100,10 +100,10 @@ A good choice for this would be the logit function, a specific sigmoid function 
 
 $$ \begin{align*}
 & p_i = g(\eta_i)=logit(\eta_i)=\frac{e^{\eta_i}}{1+e^{\eta_i}}= \frac{1}{1+e^{-\eta_i}}=\sigma(\eta_i) \\
-& \implies p_i(1+e^{\eta_i}) = e^{\eta_i} \\
-& \implies p_i = e^{\eta_i}-pe^{\eta_i} \\
-& \implies \frac{p_i}{1-p_i} = e^{\eta_i} \\
-& \implies ln(\frac{p_i}{1-p_i})=ln(Odds)=\eta_i \\
+& \Longleftrightarrow p_i(1+e^{\eta_i}) = e^{\eta_i} \\
+& \Longleftrightarrow p_i = e^{\eta_i}-pe^{\eta_i} \\
+& \Longleftrightarrow \frac{p_i}{1-p_i} = e^{\eta_i} \\
+& \Longleftrightarrow ln(\frac{p_i}{1-p_i})=ln(Odds)=\eta_i \\
 \end{align*}
 $$
 
@@ -130,7 +130,7 @@ We then find the solution numerically, as there is no closed form expression unl
 
 #### Deviance
 
-The maximum likelihood estimate for each observation is $\hat{p}_0 = \frac{y_i}{n}=y_i$ leading to the following formula for deviance. 
+The maximum likelihood estimate for each observation is $\hat{p}_0 = \frac{y_i}{n}=y_i$ leading to the following formula for deviance.
 
 $$
 \begin{align*}
@@ -204,7 +204,7 @@ $$
 
 Interpreting model fit in logistic regression requires some additional tools compared to standard linear regression. The standard residual calculation $y_i - \hat{y}$ is not appropriate since the variance of the estimated value changes depending on the probability. There are a number of alternative forms of residuals that can be used, two of which are briefly described here; pearson residuals and deviance residuals.
 
-<img src="/images/LogisticRegression/residual_types.png" width="100%" style="padding:0px"/>
+<img src="/images/posts/LogisticRegression/residual_types.png" width="100%" style="padding:0px"/>
 
 ### Pearson Residuals
 
