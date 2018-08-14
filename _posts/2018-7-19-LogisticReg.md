@@ -134,7 +134,10 @@ The maximum likelihood estimate for each observation is $\hat{p}_0 = \frac{y_i}{
 
 $$
 \begin{align*}
-D(y,\hat{y}) = 2\sum^N_{i=1}\left[y_iln\left(\frac{y_i}{\hat{y_i}}\right)+(1-y_i)ln\left(\frac{1-y_i}{1-\hat{y_i}}\right) \right]
+D(y,\hat{p_i}) & = 2\sum_{i=1}^N \left[ ln(p(y_i | \hat{\beta_s})) -ln(p(y_i | \hat{\beta_0}))  \right] \\
+& = 2\sum^N_{i=1}\left[\Big(y_iln(y_i)+(1-y_i)ln(1-y_i)\Big) - \Big(y_iln(\hat{y_i})+(1-y_i)ln(1-\hat{y_i}) \Big) \right] \\
+& = 2\sum^N_{i=1}\left[y_iln\left(\frac{y_i}{\hat{y_i}}\right)+(1-y_i)ln\left(\frac{1-y_i}{1-\hat{y_i}}\right) \right] \\
+& \propto  2\sum^N_{i=1}\left[ -y_iln(\hat{y_i})-(1-y_i)ln(1-\hat{y_i})  \right] \\
 \end{align*}
 $$
 

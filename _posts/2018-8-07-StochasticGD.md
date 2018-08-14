@@ -9,7 +9,7 @@ use_math: true
 {:toc}
 
 <script type='text/javascript' src='http://ajax.googleapis.com/ajax/libs/jquery/1.4.1/jquery.min.js'></script>
-<script type='text/javascript' src='javascript/touchHover.js'></script>
+<script type='text/javascript' src='/javascript/touchHover.js'></script>
 
 ## Introduction
 
@@ -22,7 +22,11 @@ The [previous post](\2018\07\24\BatchGD.html) introduced batch gradient descent,
 
 Many of these limitations can be addressed through changing the number of samples used per iteration $(n_{iter})$ to be less than the total number of observations $(N)$. There are three general forms when $n_{iter}=1$; **deterministic incremental gradient descent** (IG) samples without replacement in the same order across the dataset, **random reshuffling** (RR)samples without replacement in a randomized order, and **stochastic gradient descent** (SGD) samples with replacement. It is not atypical for these three methods to all be called stochastic gradient descent, so attention must be paid to their implementation. The other most common method is **mini-batch gradient descent** (MBGD) where $1<n_{iter}<N$ and the observations are typically sampled without replacement in a randomized order.  
 
-By lowering $n_{\text{iter}}<N$ we can decrease the memory burden of the computation, requiring a smaller portion of the data to be held in memory at one time (addressing limitations 1 & 4). This also increases the ease through which newer observations can be added by beginning the algorithm on the new data, rather than the total data set (limitation 2). Most importantly, the cost surface for many problems is not convex, making batch gradient descent problematic as it can get stuck in local minimum/saddle points and is consequently particularly sensitive to the starting values. The loss surface changes across iterations as the observations used for training change. This increases the variability of the algorithm and allows it to escape local minima and saddle points more easily (limitation 3; Dauphin et al., ). Since the loss surface is noisier across iterations, both stochastic and mini-batch gradient descent usually take more iterations to converge than batch gradient descent, but each iterations is quicker to calculate.  
+By lowering $n_{\text{iter}}<N$ we can decrease the memory burden of the computation, requiring a smaller portion of the data to be held in memory at one time (addressing limitations 1 & 4). This also increases the ease through which newer observations can be added by beginning the algorithm on the new data, rather than the total data set (limitation 2). Most importantly, the cost surface for many problems is not convex, making batch gradient descent problematic as it can get stuck in local minimum/saddle points and is consequently particularly sensitive to the starting values. The loss surface changes across iterations as the observations used for training change. This increases the variability of the algorithm and allows it to escape local minima and saddle points more easily (limitation 3; Dauphin et al., 2014). Since the loss surface is noisier across iterations, both stochastic and mini-batch gradient descent usually take more iterations to converge than batch gradient descent, but each iterations is quicker to calculate.
+
+A simple example of the differences between batch gradient descent and the smaller batch alternatives can be seen using a simple linear regression in the figure below. The batch gradient descent moves relatively straight towards the minimum for this convex case, while <abbr title="Random Reshuffling">RR</abbr> is much more volatile. The extra variability of <abbr title="Random Reshuffling">RR</abbr> makes convergence near the minimum slow as can be seen by the large number of iterations spent near the minimum. While in this convex case the volatility of <abbr title="Random Reshuffling">RR</abbr> appears to mostly be working against us as the algorithm doesn't converge within 10000 iterations, we can imagine how the jumping motion could help escape local minima in non-convex cases. This example is meant to simply show the differences in movement patterns and is fairly artificial in that the hyperparameters haven't been tuned, annealing is being used in the <abbr title="Random Reshuffling">RR</abbr>, and a much larger learning rate could be used in the batch gradient descent for rapid convergence (t=3).
+
+<img src="/images/posts/SGD/sgd_vs_bgd.png" width="100%" style="padding:0px"/>
 
 The differences between the intuition of <abbr title="Stochastic Gradient Descent">SGD</abbr>/<abbr title="Mini-batch Gradient Descent">MBGD</abbr> are relatively simple and intuitive, requiring only a few changes when implementing. The most obvious is the selection of the batch size to be used. Additionally, one needs to consider the sampling process for each batch and how to adjust the learning rate in order to deal with the increased volatility of the algorithm.
 
@@ -42,7 +46,7 @@ The selection of the learning rate is always critical for gradient descent; if i
 
 ### Selecting the Batch Size
 
-The selection of the batch size influences the variability and computational cost for each iteration. A general rule of thumb that works well in practice is used is $1<n_{iter}<32$, but I don't believe that this has any theoretical backing.
+The selection of the batch size influences the variability and computational cost for each iteration. A general rule of thumb that works well in practice for deep neural nets is $1<n_{iter}<32$ (Bengio, 2012; Masters & Luschi, 2018), but the choice will depend on the problem.
 
 ### Batch-Size Modulus
 
@@ -50,17 +54,19 @@ Often the total sample size $N$ is not a multiple of the batch size $n_{iter}$ r
 
 $$
 \begin{align*}
-\theta_i & = \theta_{i-1} - \lambda \triangledown f(\theta_i, x_{\text{batch 1}}) : \text{Batch 1}\\
-\theta_i & = \theta_{i-1} - \frac{n_{\text{batch 2}}}{n_{iter}} \lambda \triangledown f(\theta_i , x_{\text{batch 2}}) : \text{Batch 2} \\
-& = \theta_{i-1} - \frac{1}{9} \lambda \triangledown f(\theta_i , x_{\text{batch 2}})
+\theta_i & = \theta_{i-1} - \alpha \triangledown f(\theta_i, x_{\text{batch 1}}) : \text{Batch 1}\\
+\theta_i & = \theta_{i-1} - \frac{n_{\text{batch 2}}}{n_{iter}} \alpha \triangledown f(\theta_i , x_{\text{batch 2}}) : \text{Batch 2} \\
+& = \theta_{i-1} - \frac{1}{9} \alpha \triangledown f(\theta_i , x_{\text{batch 2}})
 \end{align*}
 $$
 
 ## References
 
+- Bengio, Y. (2012). *Practical recommendations for gradient-based training of deep architectures. In Neural networks: Tricks of the trade*, pp. 437-478.
 - Dauphin, Y. N., Pascanu, R., Gulcehre, C., Cho, K., Ganguli, S., & Bengio, Y. (2014). Identifying and attacking the saddle point problem in high-dimensional non-convex optimization. *Advances in neural information processing systems*, pp. 2933-2941.
 - Gurbuzbalaban M., Ozdaglar†, A., & Parrilo P. (2015). Why Random Reshuffling Beats Stochastic Gradient Descent. *arXiv preprint arXiv:1510.08560*.
 - HaoChen, J. Z., & Sra, S. (2018). Random Shuffling Beats SGD after Finite Epochs. *arXiv preprint arXiv:1806.10077*.
+- Masters, D., & Luschi, C. (2018). Revisiting Small Batch Training for Deep Neural Networks. *arXiv preprint arXiv:1804.07612*.
 - Shamir, O. (2016). Without-replacement sampling for stochastic gradient methods. *In Advances in Neural Information Processing Systems*, pp. 46-54.
 - Wilson, D. R., & Martinez, T. R. (2003). The general inefficiency of batch training for gradient descent learning. *Neural Networks*, 16(10), 1429-1451.
 - Ying, B., Yuan, K., Vlaski, S., & Sayed, A. H. (2018). Stochastic Learning under Random Reshuffling. *arXiv preprint arXiv:1803.07964*.
